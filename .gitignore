@@ -1,0 +1,9 @@
+bin/
+obj/
+/packages/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+riderModule.iml
+/_ReSharper.Caches/

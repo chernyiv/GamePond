@@ -1,6 +1,6 @@
 ﻿namespace GamePond.Domain.Games;
 
-public sealed record Game()
+public sealed class Game()
 {
     public required Guid Id { get; init; }
     public required string Title { get; set; }

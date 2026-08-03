@@ -1,8 +1,7 @@
-﻿using GamePond.Domain.Games;
+﻿using FluentValidation;
+using GamePond.Application.Games.Models;
 
-namespace GamePond.Application.Games.Models;
-
-using FluentValidation;
+namespace GamePond.Application.Games.Validators;
 
 public class CreateGameCommandValidator : AbstractValidator<CreateGameCommand>
 {

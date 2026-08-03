@@ -1,6 +1,17 @@
-@GamePond.Api_HostAddress = http://localhost:5093
+@host = http://localhost:7094
 
-GET {{GamePond.Api_HostAddress}}/weatherforecast/
+### Get all games
+
+GET {{host}}/api/games
 Accept: application/json
 
-###
+### Create game
+
+POST {{host}}/api/games
+Content-Type: application/json
+
+{
+  "title": "Resident Evil 2",
+  "description": "A survival-horror game.",
+  "releaseDate": "1998-01-21"
+}

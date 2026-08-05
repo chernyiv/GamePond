@@ -1,5 +1,5 @@
 using FluentValidation;
-using GamePond.Application.Games.Models;
+using GamePond.Api.Options;
 using GamePond.Application.Games.Repositories;
 using GamePond.Application.Games.Services;
 using GamePond.Application.Games.Validators;
@@ -22,6 +22,11 @@ builder.Services.AddSingleton<
 builder.Services.AddScoped<
     IGameService,
     GameService>();
+
+builder.Services.AddOptions<GameCatalogOptions>()
+    .Bind(builder.Configuration.GetSection(GameCatalogOptions.SectionName))
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
 
 var app = builder.Build();
 

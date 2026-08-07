@@ -1,4 +1,5 @@
 using FluentValidation;
+using GamePond.Api.Middleware;
 using GamePond.Api.Options;
 using GamePond.Application.Games.Repositories;
 using GamePond.Application.Games.Services;
@@ -29,6 +30,9 @@ builder.Services.AddOptions<GameCatalogOptions>()
     .ValidateOnStart();
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseMiddleware<RequestTimingMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
